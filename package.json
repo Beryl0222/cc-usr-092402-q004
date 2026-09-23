@@ -1,0 +1,11 @@
+{
+  "name": "culture-time-budget",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "碎片文化消费节律保护领域资料",
+  "scripts": {
+    "build": "node --check src/culture_time_budget.js",
+    "test": "node --test"
+  }
+}
