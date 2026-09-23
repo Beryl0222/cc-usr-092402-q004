@@ -1,0 +1,175 @@
+{
+  "note": "虚构跨设备场景，仅用于格式核对与账本演示，不含真实个人信息",
+  "events": [
+    {
+      "event_id": "budget-004",
+      "kind": "BUDGET_SET",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "acct-004",
+      "payload": { "daily_cap_ms": 7200000 }
+    },
+    {
+      "event_id": "bind-tv-004",
+      "kind": "DEVICE_BINDING",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "acct-004",
+      "payload": {
+        "rule_id": "bind-tv", "version": 1, "device_sn": "TV-SN-004",
+        "sharing": "PERSONAL", "valid_from": "2026-09-01T00:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "bind-phone-004",
+      "kind": "DEVICE_BINDING",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "acct-004",
+      "payload": {
+        "rule_id": "bind-phone", "version": 1, "device_sn": "PH-SN-004",
+        "sharing": "PERSONAL", "valid_from": "2026-09-01T00:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "bind-car-004",
+      "kind": "DEVICE_BINDING",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "acct-004",
+      "payload": {
+        "rule_id": "bind-car", "version": 1, "device_sn": "CAR-SN-004",
+        "sharing": "FAMILY_SHARED", "valid_from": "2026-09-01T00:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "rel-spouse-004-v1",
+      "kind": "RELATIONSHIP_RULE",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "acct-004",
+      "payload": {
+        "rule_id": "rel-spouse", "version": 1, "member_id": "user-spouse",
+        "relationship": "FAMILY_ADULT", "attribution": "TO_OWNER",
+        "valid_from": "2026-09-01T00:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "pack-std",
+      "kind": "CONTENT_PACK_RULE",
+      "occurred_at": "2026-09-01T00:00:00+08:00",
+      "subject_id": "platform",
+      "payload": {
+        "rule_id": "pack-standard", "version": 1, "pack_id": "STD",
+        "billable": true, "rate": 1, "category": "STANDARD",
+        "valid_from": "2026-09-01T00:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "sync-tv-004",
+      "kind": "SESSION_SYNC",
+      "occurred_at": "2026-09-20T19:59:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T19:59:01+08:00",
+      "payload": {
+        "device_sn": "TV-SN-004", "session_id": "sess-tv-2000",
+        "device_clock": "2026-09-20T19:59:00+08:00",
+        "reference_clock": "2026-09-20T19:59:00+08:00",
+        "drift_ppm_tolerance": 500, "iana_timezone": "Asia/Shanghai"
+      }
+    },
+    {
+      "event_id": "sync-phone-004",
+      "kind": "SESSION_SYNC",
+      "occurred_at": "2026-09-20T20:35:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T20:35:01+08:00",
+      "payload": {
+        "device_sn": "PH-SN-004", "session_id": "sess-phone-2040",
+        "device_clock": "2026-09-20T20:35:00+08:00",
+        "reference_clock": "2026-09-20T20:35:00+08:00",
+        "drift_ppm_tolerance": 500, "iana_timezone": "Asia/Shanghai",
+        "resume_chain": "CHAIN-7"
+      }
+    },
+    {
+      "event_id": "sync-car-004",
+      "kind": "SESSION_SYNC",
+      "occurred_at": "2026-09-21T07:59:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-21T07:59:01+08:00",
+      "payload": {
+        "device_sn": "CAR-SN-004", "session_id": "sess-car-0800",
+        "device_clock": "2026-09-21T07:59:00+08:00",
+        "reference_clock": "2026-09-21T07:59:00+08:00",
+        "drift_ppm_tolerance": 500, "iana_timezone": "Asia/Shanghai"
+      }
+    },
+    {
+      "event_id": "seg-tv-play",
+      "kind": "PLAYBACK_SEGMENT",
+      "occurred_at": "2026-09-20T20:30:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T20:30:05+08:00",
+      "payload": {
+        "device_sn": "TV-SN-004", "session_id": "sess-tv-2000",
+        "content_id": "C-MOVIE-7", "state": "PLAYING",
+        "seg_start": "2026-09-20T20:00:00+08:00", "seg_end": "2026-09-20T20:30:00+08:00",
+        "pos_start_ms": 0, "pos_end_ms": 1800000,
+        "viewer_id": "acct-004", "pack_id": "STD", "resume_chain": "CHAIN-7"
+      }
+    },
+    {
+      "event_id": "seg-tv-pause",
+      "kind": "PLAYBACK_SEGMENT",
+      "occurred_at": "2026-09-20T20:31:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T20:31:05+08:00",
+      "payload": {
+        "device_sn": "TV-SN-004", "session_id": "sess-tv-2000",
+        "content_id": "C-MOVIE-7", "state": "PAUSED",
+        "seg_start": "2026-09-20T20:30:00+08:00", "seg_end": "2026-09-20T20:31:00+08:00",
+        "pos_start_ms": 1800000, "pos_end_ms": 1800000,
+        "viewer_id": "acct-004", "pack_id": "STD", "resume_chain": "CHAIN-7"
+      }
+    },
+    {
+      "event_id": "seg-phone-resume",
+      "kind": "PLAYBACK_SEGMENT",
+      "occurred_at": "2026-09-20T21:05:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T21:05:05+08:00",
+      "payload": {
+        "device_sn": "PH-SN-004", "session_id": "sess-phone-2040",
+        "content_id": "C-MOVIE-7", "state": "PLAYING",
+        "seg_start": "2026-09-20T20:40:00+08:00", "seg_end": "2026-09-20T21:05:00+08:00",
+        "pos_start_ms": 1800000, "pos_end_ms": 3300000,
+        "viewer_id": "acct-004", "pack_id": "STD", "resume_chain": "CHAIN-7"
+      }
+    },
+    {
+      "event_id": "seg-phone-resume-dup",
+      "kind": "PLAYBACK_SEGMENT",
+      "occurred_at": "2026-09-20T21:06:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-20T21:06:30+08:00",
+      "payload": {
+        "note": "弱网重发：同一观察以新事件 ID 再次上报",
+        "device_sn": "PH-SN-004", "session_id": "sess-phone-2040",
+        "content_id": "C-MOVIE-7", "state": "PLAYING",
+        "seg_start": "2026-09-20T20:40:00+08:00", "seg_end": "2026-09-20T21:05:00+08:00",
+        "pos_start_ms": 1800000, "pos_end_ms": 3300000,
+        "viewer_id": "acct-004", "pack_id": "STD", "resume_chain": "CHAIN-7"
+      }
+    },
+    {
+      "event_id": "seg-car-spouse",
+      "kind": "PLAYBACK_SEGMENT",
+      "occurred_at": "2026-09-21T08:20:00+08:00",
+      "subject_id": "acct-004",
+      "received_at": "2026-09-21T08:20:05+08:00",
+      "payload": {
+        "device_sn": "CAR-SN-004", "session_id": "sess-car-0800",
+        "content_id": "C-PODCAST-2", "state": "PLAYING",
+        "seg_start": "2026-09-21T08:00:00+08:00", "seg_end": "2026-09-21T08:20:00+08:00",
+        "pos_start_ms": 0, "pos_end_ms": 1200000,
+        "viewer_id": "user-spouse", "pack_id": "STD"
+      }
+    }
+  ]
+}
