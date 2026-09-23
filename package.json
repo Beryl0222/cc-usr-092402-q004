@@ -5,7 +5,7 @@
   "type": "module",
   "description": "碎片文化消费节律保护领域资料",
   "scripts": {
-    "build": "node --check src/culture_time_budget.js",
+    "build": "node --check src/culture_time_budget.js && node --check src/time_ledger/intervals.js && node --check src/time_ledger/clock.js && node --check src/time_ledger/events.js && node --check src/time_ledger/ledger.js",
     "test": "node --test"
   }
 }

@@ -1,0 +1,109 @@
+{
+  "description": "虚构的跨设备上报批次：电视暂停后手机断点续播（区间重叠），另有一条离线下载后的晚到片段。仅用于格式核对与账本重放验证。",
+  "events": [
+    {
+      "event_id": "batch-001",
+      "kind": "SYNC_POINT",
+      "occurred_at": "2026-09-20T10:00:00+00:00",
+      "subject_id": "ops-system",
+      "payload": {
+        "device_id": "tv-01",
+        "device_clock": "2026-09-20T18:00:00+08:00",
+        "server_clock": "2026-09-20T10:00:00+00:00"
+      }
+    },
+    {
+      "event_id": "batch-002",
+      "kind": "DEVICE_BOUND",
+      "occurred_at": "2026-09-01T00:00:00+00:00",
+      "subject_id": "acct-demo",
+      "payload": { "device_id": "tv-01", "account_id": "acct-demo", "effective_from": "2026-09-01T00:00:00+00:00" }
+    },
+    {
+      "event_id": "batch-003",
+      "kind": "DEVICE_BOUND",
+      "occurred_at": "2026-09-01T00:00:00+00:00",
+      "subject_id": "acct-demo",
+      "payload": { "device_id": "phone-01", "account_id": "acct-demo", "effective_from": "2026-09-01T00:00:00+00:00" }
+    },
+    {
+      "event_id": "batch-004",
+      "kind": "PLAYBACK_FRAGMENT",
+      "occurred_at": "2026-09-20T10:05:00+00:00",
+      "subject_id": "viewer-demo",
+      "payload": {
+        "device_id": "tv-01",
+        "session_id": "s-tv-1",
+        "fragment_seq": 1,
+        "content_id": "movie-1",
+        "content_start": 0,
+        "content_end": 300,
+        "started_at": "2026-09-20T18:00:00+08:00",
+        "ended_at": "2026-09-20T18:05:00+08:00",
+        "timezone": "Asia/Shanghai"
+      }
+    },
+    {
+      "event_id": "batch-005",
+      "kind": "PLAYBACK_PAUSED",
+      "occurred_at": "2026-09-20T10:05:01+00:00",
+      "subject_id": "viewer-demo",
+      "payload": {
+        "device_id": "tv-01",
+        "session_id": "s-tv-1",
+        "content_id": "movie-1",
+        "content_position": 300,
+        "paused_at": "2026-09-20T18:05:00+08:00"
+      }
+    },
+    {
+      "event_id": "batch-006",
+      "kind": "PLAYBACK_FRAGMENT",
+      "occurred_at": "2026-09-20T10:10:30+00:00",
+      "subject_id": "viewer-demo",
+      "payload": {
+        "device_id": "phone-01",
+        "session_id": "s-phone-1",
+        "fragment_seq": 1,
+        "content_id": "movie-1",
+        "content_start": 270,
+        "content_end": 600,
+        "started_at": "2026-09-20T18:05:00+08:00",
+        "ended_at": "2026-09-20T18:10:30+08:00",
+        "timezone": "Asia/Shanghai"
+      }
+    },
+    {
+      "event_id": "batch-007",
+      "kind": "OFFLINE_DOWNLOAD",
+      "occurred_at": "2026-09-20T12:00:00+00:00",
+      "subject_id": "viewer-demo",
+      "payload": {
+        "download_id": "dl-001",
+        "device_id": "phone-01",
+        "content_id": "movie-2",
+        "package_id": "pkg-video",
+        "granted_at": "2026-09-20T12:00:00+00:00"
+      }
+    },
+    {
+      "event_id": "batch-008",
+      "kind": "PLAYBACK_FRAGMENT",
+      "occurred_at": "2026-09-23T09:00:00+00:00",
+      "subject_id": "viewer-demo",
+      "payload": {
+        "device_id": "phone-01",
+        "session_id": "s-phone-2",
+        "fragment_seq": 1,
+        "content_id": "movie-2",
+        "content_start": 0,
+        "content_end": 120,
+        "started_at": "2026-09-21T07:30:00+08:00",
+        "ended_at": "2026-09-21T07:32:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "offline": true,
+        "download_id": "dl-001"
+      }
+    }
+  ]
+}
